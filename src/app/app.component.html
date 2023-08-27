@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="winnerFound" *ngIf="winnerFound">{{ currentPlayer }} WON</div>
+  <div class="matchDraw" *ngIf="matchDraw">It's a Draw!</div>
+</div>
+
+<div class="grid-container">
+  <div
+    *ngFor="let item of gridArray; let i = index"
+    class="grid-item"
+    [class.background]="setColor(i)"
+    (click)="onClick(i)"
+  >
+    {{ item }}
+  </div>
+</div>
+
+<div class="footer">
+  <button mat-fab style="background-color: #8f588f" (click)="reset()">
+    <mat-icon>replay</mat-icon>
+  </button>
+</div>
